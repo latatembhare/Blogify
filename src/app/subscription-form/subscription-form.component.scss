@@ -1,0 +1,28 @@
+.card{
+    background-color: var(--secondary-color);
+    width: 1200px;
+    margin-top: 6vh;
+}
+
+input[type=text], input[type=email]{
+    width: 100%;
+}
+
+.sub-text{
+    width: 400px;
+}
+@media (max-width: 768px) {
+    .card {
+       width: 600px;
+    }
+}
+@media (max-width: 468px) {
+    .card {
+       width: 300px;
+    }
+}
+@media (max-width: 468px) {
+    .sub-text {
+      width: 250px;
+    }
+}

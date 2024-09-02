@@ -1,0 +1,13 @@
+
+<div class="card" *ngIf="postCard" [routerLink]="['/post',postCard.id]">
+    <img src="{{postCard.data.postImgPath}}" alt="post-card" class="card-img-top" height="300px">
+    <div class="card-body shadow-effect">
+        <small class="bg-light text-center text-danger">{{postCard.data.category.category |uppercase}} </small>
+        <small class="bg-light text-center text-success ml-3" *ngIf="postCard.data.featured">Featured </small>
+        <small class="bg-light text-center text-info ml-3">Views{{postCard.data.views}}</small>
+        <h5 class="mt-1">{{postCard.data.title}}</h5>
+        <p>{{postCard.data.excerpt}}</p>
+        <small class="bg-light text-warning text-info">Last updated {{postCard.data.createdAt.toMillis() |date}}</small>
+    </div>
+</div>
+      

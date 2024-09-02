@@ -1,0 +1,15 @@
+<div class="card mt-5 shadow-effect">
+    <div class="card-body">
+        <h4>Leave a comment</h4>
+        <p>You can leave a comment using this form</p>
+    <form #commentForm="ngForm" (submit)="subitComment()" >
+        <div class="form-group">
+            <label>name</label>
+            <input class="form-control shadow-effect" type="text" placeholder="Enter your name here" name="name" ngModel>
+        </div>
+        <div class="form-group">
+            <label>comment</label>
+            <textarea class="form-control shadow-effect" rows="3"  name="comment" ngModel></textarea>        </div>
+        <button type="submit"  class="btn-lg btn-theme" >Add a comment</button>
+    </form>
+</div>

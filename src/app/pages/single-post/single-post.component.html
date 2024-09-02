@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="card shadow-effect" *ngIf="post">
+        <img
+          class="card-img-top img-fluid"
+          src="{{post.postImgPath}}"
+          alt=""
+        />
+        <div class="card-body">
+          <small class="bg-light text-danger text-center">{{post.category.category |titlecase}}</small>
+          <small class="bg-light text-success text-center ml-2" *ngIf="post.featured"
+            >Featured
+          </small>
+          <small class="bg-light text-info text-center ml-2">View {{ post.views}}</small>
+          <small class="bg-light text-warning text-center ml-2"
+            >LAST UPDATED {{ post.createdAt.toMillis()|date|uppercase}}</small
+          >
+        </div>
+        <div class="container">
+          <h1 class="mb-3 mt-3">{{post.title}}</h1>
+          <p [innerHTML]="post.content">
+           
+          </p>
+        </div>
+      </div>
+      <app-comment-form></app-comment-form>
+      <app-comment-list></app-comment-list>
+    </div>
+    <div class="col-md-3">
+      <div class="container">
+        <div *ngFor="let similarPost of similarPostArray">
+          <app-post-card [postCard]="similarPost"></app-post-card>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
